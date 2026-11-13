@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="Your customizable Hindi and English voice assistant starter">
+  <title>JARVIS X</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="top">
+      <div class="orb" aria-hidden="true"></div>
+      <div><p class="eyebrow">PERSONAL AI SYSTEM</p><h1>JARVIS <span>X</span></h1></div>
+      <span class="status"><i></i> LOCAL MODE</span>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">VOICE INTERFACE</p>
+      <div class="reactor" id="reactor"><div class="ring r1"></div><div class="ring r2"></div><div class="core">JX</div></div>
+      <h2 id="state">Ready when you are</h2>
+      <p class="hint" id="hint">Tap the microphone and speak in Hindi or English.</p>
+      <button class="mic" id="micBtn" type="button" aria-label="Start voice input">🎙️ <span>START LISTENING</span></button>
+      <p class="small" id="support">Microphone permission is requested only when you tap the button.</p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><h3>Conversation</h3><button class="quiet" id="clearBtn" type="button">CLEAR</button></div>
+      <div id="log" class="log" aria-live="polite">
+        <div class="bubble bot"><b>JARVIS X</b><p>Hello! Namaste. I am ready. Try “What time is it?” or “YouTube kholo”.</p></div>
+      </div>
+      <form id="textForm" class="composer">
+        <input id="textInput" autocomplete="off" placeholder="Type a command..." aria-label="Type a command">
+        <button type="submit">SEND</button>
+      </form>
+    </section>
+
+    <section class="panel commands">
+      <h3>Try these commands</h3>
+      <div class="chips">
+        <button type="button" data-cmd="Namaste Jarvis">Namaste</button>
+        <button type="button" data-cmd="What time is it?">Time</button>
+        <button type="button" data-cmd="Aaj ki date batao">Date</button>
+        <button type="button" data-cmd="YouTube kholo">Open YouTube</button>
+        <button type="button" data-cmd="Google kholo">Open Google</button>
+        <button type="button" data-cmd="Help">Help</button>
+      </div>
+    </section>
+
+    <footer>JARVIS X · Starter build 0.1 · No account or API key required</footer>
+  </main>
+  <script src="app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+      window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(() => {}));
+    }
+  </script>
+</body>
+</html>
